@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<h1>HOME</h1>
+<p><%= home_content %></p>
+
+ <% for(let obj of posts){  %>
+<h1><%= obj.title %></h1>
+
+ <%  if( obj.post.length<=100) {  %>
+<p><%=obj.post%></p>
+
+ <% }else {  %>
+     <p><%=obj.post.substr(0,100)+'...'%><a href="/post/<%= obj.title %>" >read more</a>
+</p>   
+  <%  }  %>  
+ <% } %>
+
+<%- include("partials/footer"); -%>
